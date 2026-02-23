@@ -21,25 +21,39 @@ class OnboardingScreen extends StatelessWidget {
         PageViewModel(
           title: "Welcome to our app",
           body: "Discover amazing products and enjoy exclusive deals.",
-          image: Image.asset("assets/images/splash1.png"),
+          image: Image.asset("assets/images/splash1.png", width: 200),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Easy Shopping",
           body: "Browse through thousands of products and find what you need.",
-          image: Image.asset("assets/images/splash2.png"),
+          image: Image.asset("assets/images/splash2.png", width: 200),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Fast Delivery",
           body: "Get your products delivered quickly and safely to your doorstep.",
-          image: Image.asset("assets/images/splash3.png"),
+          image: Image.asset("assets/images/splash3.png", width: 200),
           decoration: pageDecoration,
+          footer: Padding(
+            padding: EdgeInsets.only(left: 15, right: 15, top: 50),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+              },
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size.fromHeight(55),
+                backgroundColor: Color(0xFFEF6969),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+              ),
+              child: Text("Get Started", style: TextStyle(color: Colors.white, fontSize: 18)),
+            ),
+          ),
         ),
       ],
-      showSkipButton: true,
-      showDoneButton: true,
-      showBackButton: true,
+      showSkipButton: false,
+      showDoneButton: false,
+      showBackButton: false,
       back: Text(
         "Back",
         style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFEF6969)),
@@ -63,6 +77,14 @@ class OnboardingScreen extends StatelessWidget {
       onSkip: () {
         Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
       },
+      dotsDecorator: DotsDecorator(
+        size: Size.square(10),
+        activeSize: Size(20, 10),
+        activeColor: Color(0xFFEF6969),
+        color: Colors.black26,
+        spacing: EdgeInsets.symmetric(horizontal: 3),
+        activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+      ),
     );
   }
 }
