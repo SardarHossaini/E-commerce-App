@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/recovery_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,10 +20,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 10),
-              Text("Forgot password", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Forgot password",
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                ),
+              ),
               SizedBox(height: 40),
               Text(
                 "Please enter you email address. You will receive a link to create or set a new password via email.",
@@ -51,10 +58,10 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => RecoveryScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size.fromHeight(55),
@@ -62,6 +69,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
                 child: Text("Send code", style: TextStyle(color: Colors.white, fontSize: 18)),
+              ),
+              SizedBox(height: 25),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("OR", style: TextStyle(color: Colors.black54, fontSize: 15)),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => OTPScreen()));
+                    },
+                    child: Text(
+                      "Verify Using Number",
+                      style: TextStyle(color: Color(0xFFDB3022), fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
