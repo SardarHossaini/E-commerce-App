@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.shopping_cart, size: 250, color: Color(0xFFEF6969)),
+            Icon(Icons.shopping_cart, size: 250, color: Color(0xFFDB3022)),
             Text(
               "DP SHOP",
               style: TextStyle(

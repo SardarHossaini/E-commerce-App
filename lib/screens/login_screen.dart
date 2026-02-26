@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/forgot_password_screen.dart';
 import 'package:e_commerce_app/screens/home_screen.dart';
 import 'package:e_commerce_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -40,10 +41,15 @@ class LoginScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.bottomRight,
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ForgotPasswordScreen()),
+                          );
+                        },
                         child: Text(
                           "Forgot password",
-                          style: TextStyle(color: Color(0xFFEF6969), fontWeight: FontWeight.w600),
+                          style: TextStyle(color: Color(0xFFDB3022), fontWeight: FontWeight.w600),
                         ),
                       ),
                     ),
@@ -53,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size.fromHeight(55),
-                        backgroundColor: Color(0xFFEF6969),
+                        backgroundColor: Color(0xFFDB3022),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       ),
                       child: Text("Log in", style: TextStyle(color: Colors.white, fontSize: 18)),
@@ -75,7 +81,7 @@ class LoginScreen extends StatelessWidget {
                           },
                           child: Text(
                             "Sign up",
-                            style: TextStyle(color: Color(0xFFEF6969), fontWeight: FontWeight.w600),
+                            style: TextStyle(color: Color(0xFFDB3022), fontWeight: FontWeight.w600),
                           ),
                         ),
                       ],

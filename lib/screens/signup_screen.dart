@@ -70,7 +70,7 @@ class SignupScreen extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size.fromHeight(55),
-                        backgroundColor: Color(0xFFEF6969),
+                        backgroundColor: Color(0xFFDB3022),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       ),
                       child: Text(
@@ -95,7 +95,7 @@ class SignupScreen extends StatelessWidget {
                           },
                           child: Text(
                             "Login",
-                            style: TextStyle(color: Color(0xFFEF6969), fontWeight: FontWeight.w600),
+                            style: TextStyle(color: Color(0xFFDB3022), fontWeight: FontWeight.w600),
                           ),
                         ),
                       ],
