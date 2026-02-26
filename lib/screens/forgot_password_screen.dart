@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/otp_screen.dart';
 import 'package:e_commerce_app/screens/recovery_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               ),
               SizedBox(height: 40),
               Text(
-                "Please enter you email address. You will receive a link to create or set a new password via email.",
+                "Please enter your email address. You will receive a link to create or set a new password via email.",
                 style: TextStyle(fontSize: 15),
               ),
               SizedBox(height: 20),
