@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/screens/home_screen.dart';
+import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -12,18 +13,34 @@ class SignupScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(height: 110),
+              SizedBox(height: 30),
               Image.asset("assets/images/freed.png"),
-              SizedBox(height: 50),
+              SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Column(
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
+                        hintText: "Enter name",
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.person_3_outlined),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    TextFormField(
+                      decoration: InputDecoration(
                         hintText: "Enter email",
                         border: OutlineInputBorder(),
                         prefixIcon: Icon(Icons.email_outlined),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        hintText: "Enter number",
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.numbers),
                       ),
                     ),
                     SizedBox(height: 10),
@@ -36,17 +53,17 @@ class SignupScreen extends StatelessWidget {
                         suffixIcon: Icon(Icons.visibility_outlined),
                       ),
                     ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Forgot password",
-                          style: TextStyle(color: Color(0xFFEF6969), fontWeight: FontWeight.w600),
-                        ),
+                    SizedBox(height: 10),
+                    TextFormField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        hintText: "Confirm",
+                        border: OutlineInputBorder(),
+                        prefixIcon: Icon(Icons.lock_outline),
+                        suffixIcon: Icon(Icons.visibility_outlined),
                       ),
                     ),
-                    SizedBox(height: 40),
+                    SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
@@ -56,25 +73,28 @@ class SignupScreen extends StatelessWidget {
                         backgroundColor: Color(0xFFEF6969),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       ),
-                      child: Text("Log in", style: TextStyle(color: Colors.white, fontSize: 18)),
+                      child: Text(
+                        "Create Account",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
                     ),
                     SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Don't have an account?",
+                          "Already have an account?",
                           style: TextStyle(color: Colors.black54, fontSize: 15),
                         ),
                         TextButton(
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (_) => SignupScreen()),
+                              MaterialPageRoute(builder: (_) => LoginScreen()),
                             );
                           },
                           child: Text(
-                            "Sign up",
+                            "Login",
                             style: TextStyle(color: Color(0xFFEF6969), fontWeight: FontWeight.w600),
                           ),
                         ),
