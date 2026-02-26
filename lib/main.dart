@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:e_commerce_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'E-commerce App',
       theme: ThemeData(primaryColor: Color(0xFFEF6969)),
-      home: const SplashScreen(),
+      home: const LoginScreen(),
     );
   }
 }

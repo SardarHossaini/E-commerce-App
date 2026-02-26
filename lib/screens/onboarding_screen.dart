@@ -1,4 +1,4 @@
-import 'package:e_commerce_app/screens/home_screen.dart';
+import 'package:e_commerce_app/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -39,7 +39,7 @@ class OnboardingScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: 15, right: 15, top: 50),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (_) => LoginScreen()));
               },
               style: ElevatedButton.styleFrom(
                 minimumSize: Size.fromHeight(55),
@@ -53,7 +53,7 @@ class OnboardingScreen extends StatelessWidget {
       ],
       showSkipButton: false,
       showDoneButton: false,
-      showBackButton: false,
+      showBackButton: true,
       back: Text(
         "Back",
         style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFEF6969)),
@@ -72,10 +72,10 @@ class OnboardingScreen extends StatelessWidget {
       ),
       onDone: () {
         // When done button is press
-        Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (_) => LoginScreen()));
       },
       onSkip: () {
-        Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (_) => LoginScreen()));
       },
       dotsDecorator: DotsDecorator(
         size: Size.square(10),
