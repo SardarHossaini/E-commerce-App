@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/otp_verify_screen.dart';
 import 'package:flutter/material.dart';
 
 class OTPScreen extends StatelessWidget {
@@ -39,7 +40,7 @@ class OTPScreen extends StatelessWidget {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (_) => RecoveryScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => OtpVerifyScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size.fromHeight(55),
