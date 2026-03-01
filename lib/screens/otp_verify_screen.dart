@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/recovery_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sms_otp_auto_verify/sms_otp_auto_verify.dart';
 
@@ -13,8 +14,16 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
   BoxDecoration get _pinPutDecoration {
     return BoxDecoration(
       border: Border.all(color: Theme.of(context).primaryColor),
-      borderRadius: BorderRadius.circular(15.0),
+      borderRadius: BorderRadius.circular(8.0),
     );
+  }
+
+  TextEditingController textEditingController = new TextEditingController(text: "");
+
+  /// get signature code
+  _getSignatureCode() async {
+    String? signature = await SmsVerification.getAppSignature();
+    print("signature $signature");
   }
 
   @override
@@ -43,9 +52,9 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
                 "Please enter your number. You will receive a OTP code to create or set a new password via number.",
                 style: TextStyle(fontSize: 15),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
               TextFieldPin(
-                // textController: textEditingController,
+                textController: textEditingController,
                 autoFocus: true,
                 codeLength: 6,
                 alignment: MainAxisAlignment.center,
@@ -53,27 +62,25 @@ class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
                 margin: 9,
                 selectedBoxSize: 45.0,
                 textStyle: TextStyle(fontSize: 16),
-                // defaultDecoration: _pinPutDecoration.copyWith(
-                // border: Border.all(
-                // color: Theme.of(context)
-                // .primaryColor
-                //     .withOpacity(0.6))),
-                // selectedDecoration: _pinPutDecoration,
+                defaultDecoration: _pinPutDecoration.copyWith(
+                  border: Border.all(color: Colors.grey),
+                ),
+                selectedDecoration: _pinPutDecoration,
                 onChange: (code) {
-                  // _onOtpCallBack(code,false);
+                  setState(() {});
                 },
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (_) => OtpVerifyScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => RecoveryScreen()));
                 },
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size.fromHeight(55),
                   backgroundColor: Color(0xFFDB3022),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                 ),
-                child: Text("Send code", style: TextStyle(color: Colors.white, fontSize: 18)),
+                child: Text("Verify OTP", style: TextStyle(color: Colors.white, fontSize: 18)),
               ),
             ],
           ),
