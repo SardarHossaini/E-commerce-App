@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   introduction_screen: ^4.0.0
   sms_otp_auto_verify: ^2.2.0
+  animated_bottom_navigation_bar: ^1.4.0
 
 dev_dependencies:
   flutter_test:
