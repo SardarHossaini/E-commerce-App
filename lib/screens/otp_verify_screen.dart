@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:sms_otp_auto_verify/sms_otp_auto_verify.dart';
 
-class OtpVerifyScreen extends StatelessWidget {
-  const OtpVerifyScreen({super.key});
+class OtpVerifyScreen extends StatefulWidget {
+  OtpVerifyScreen({super.key});
+
+  @override
+  State<OtpVerifyScreen> createState() => _OtpVerifyScreenState();
+}
+
+class _OtpVerifyScreenState extends State<OtpVerifyScreen> {
+  // String? signature = await SmsVerification.getAppSignature();
+  BoxDecoration get _pinPutDecoration {
+    return BoxDecoration(
+      border: Border.all(color: Theme.of(context).primaryColor),
+      borderRadius: BorderRadius.circular(15.0),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,11 +44,24 @@ class OtpVerifyScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 15),
               ),
               SizedBox(height: 20),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Enter Number",
-                  border: OutlineInputBorder(),
-                ),
+              TextFieldPin(
+                // textController: textEditingController,
+                autoFocus: true,
+                codeLength: 6,
+                alignment: MainAxisAlignment.center,
+                defaultBoxSize: 45.0,
+                margin: 9,
+                selectedBoxSize: 45.0,
+                textStyle: TextStyle(fontSize: 16),
+                // defaultDecoration: _pinPutDecoration.copyWith(
+                // border: Border.all(
+                // color: Theme.of(context)
+                // .primaryColor
+                //     .withOpacity(0.6))),
+                // selectedDecoration: _pinPutDecoration,
+                onChange: (code) {
+                  // _onOtpCallBack(code,false);
+                },
               ),
               SizedBox(height: 20),
               ElevatedButton(
