@@ -23,6 +23,14 @@ class _NavigationScreenState extends State<NavigationScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('Navigation Screen')),
       body: IndexedStack(index: pageIndex, children: pages),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.qr_code, size: 20),
+        foregroundColor: Colors.white,
+        backgroundColor: Color(0xFFDB3022),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: [
           CupertinoIcons.home,
@@ -30,6 +38,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
           CupertinoIcons.heart,
           CupertinoIcons.person,
         ],
+        backgroundColor: Colors.grey[200],
         inactiveColor: Colors.black.withOpacity(0.5),
         activeColor: Color(0xFFDB3022),
         gapLocation: GapLocation.center,

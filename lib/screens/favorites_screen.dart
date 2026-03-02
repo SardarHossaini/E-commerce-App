@@ -9,12 +9,7 @@ class FavoritesScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Favorites Screen')),
       body: Container(
         color: Colors.white,
-        child: const Center(
-          child: Text(
-            'Favorites Screen',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-        ),
+        child: const Center(child: Text('Favorites Screen')),
       ),
     );
   }
