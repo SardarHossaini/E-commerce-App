@@ -208,24 +208,28 @@ class HomeScreen extends StatelessWidget {
                 physics: NeverScrollableScrollPhysics(),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 0.6,
-                  crossAxisSpacing: 2,
+                  childAspectRatio: 0.85,
                 ),
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(right: 10),
+                    width: 200,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(
+                          height: 200,
                           child: Stack(
                             children: [
                               InkWell(
                                 onTap: () {},
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(imageList[index], fit: BoxFit.cover),
+                                  child: Image.asset(
+                                    imageList[index],
+                                    fit: BoxFit.cover,
+                                    width: 200,
+                                  ),
                                 ),
                               ),
                               Positioned(
@@ -247,7 +251,7 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: 10),
                         Text(
                           productTitles[index],
-                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(height: 4),
                         Row(
@@ -270,6 +274,7 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
               ),
+              SizedBox(height: 20),
             ],
           ),
         ),
