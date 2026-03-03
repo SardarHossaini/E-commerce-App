@@ -21,7 +21,6 @@ class _NavigationScreenState extends State<NavigationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Navigation Screen')),
       body: IndexedStack(index: pageIndex, children: pages),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -38,7 +37,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
           CupertinoIcons.heart,
           CupertinoIcons.person,
         ],
-        backgroundColor: Colors.grey[200],
+        backgroundColor: Colors.black12.withOpacity(0.05),
         inactiveColor: Colors.black.withOpacity(0.5),
         activeColor: Color(0xFFDB3022),
         gapLocation: GapLocation.center,
