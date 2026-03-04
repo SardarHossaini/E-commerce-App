@@ -71,17 +71,47 @@ class ProductScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 10),
-                RatingBar.builder(
-                  initialRating: 4,
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemPadding: EdgeInsets.symmetric(horizontal: 4),
-                  itemBuilder: (context, index) => Icon(Icons.star, color: Colors.amber),
-                  onRatingUpdate: (rating) {},
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: RatingBar.builder(
+                    initialRating: 4,
+                    minRating: 1,
+                    direction: Axis.horizontal,
+                    allowHalfRating: true,
+                    itemSize: 25,
+                    itemCount: 5,
+                    itemPadding: EdgeInsets.symmetric(horizontal: 1),
+                    itemBuilder: (context, index) => Icon(Icons.star, color: Colors.amber),
+                    onRatingUpdate: (rating) {},
+                  ),
                 ),
                 SizedBox(height: 10),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Cool, windy weather is on its way. Send him out the door in a jacket he wants to wear. Warm Zooper Hoodes Jacket",
+                    style: TextStyle(
+                      color: Colors.black87,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Color(0x1F989797),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Center(child: Icon(Icons.shopping_cart, color: Color(0xFFDB3022))),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
