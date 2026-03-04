@@ -21,10 +21,58 @@ class ProductsDetailsPopups extends StatelessWidget {
                 topRight: Radius.circular(30),
               ),
             ),
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Size: ", style: isStyle),
+                          SizedBox(height: 20),
+                          Text("Color: ", style: isStyle),
+                          SizedBox(height: 20),
+                          Text("Total: ", style: isStyle),
+                          SizedBox(height: 20),
+                        ],
+                      ),
+                      SizedBox(width: 30),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              SizedBox(width: 20),
+                              Text("S", style: isStyle),
+                              SizedBox(width: 20),
+                              Text("M", style: isStyle),
+                              SizedBox(width: 20),
+                              Text("L", style: isStyle),
+                              SizedBox(width: 20),
+                              Text("XL", style: isStyle),
+                            ],
+                          ),
+                          SizedBox(height: 20),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
         );
       },
-      child: ContainerButtonModel(itext: "Buy Now", containerWidth: MediaQuery.of(context).size.width/1.5,bgColor: Color(0xFFDB3022),),
+      child: ContainerButtonModel(
+        itext: "Buy Now",
+        containerWidth: MediaQuery.of(context).size.width / 1.5,
+        bgColor: Color(0xFFDB3022),
+      ),
     );
   }
 }
