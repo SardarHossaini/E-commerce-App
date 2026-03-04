@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/widgets/products_details_popups.dart';
 import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -106,10 +107,11 @@ class ProductScreen extends StatelessWidget {
                       height: 60,
                       decoration: BoxDecoration(
                         color: Color(0x1F989797),
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Center(child: Icon(Icons.shopping_cart, color: Color(0xFFDB3022))),
                     ),
+                    ProductsDetailsPopups(),
                   ],
                 ),
               ],
