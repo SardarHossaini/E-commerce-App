@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/payment_method_screen.dart';
 import 'package:e_commerce_app/widgets/container_button_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -134,7 +135,12 @@ class CartScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => PaymentMethodScreen()),
+                  );
+                },
                 child: ContainerButtonModel(
                   itext: "Checkout",
                   containerWidth: MediaQuery.of(context).size.width,
