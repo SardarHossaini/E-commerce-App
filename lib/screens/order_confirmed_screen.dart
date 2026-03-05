@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/widgets/container_button_model.dart';
 import 'package:flutter/material.dart';
 
 class OrderConfirmedScreen extends StatelessWidget {
@@ -7,12 +8,222 @@ class OrderConfirmedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Order Confirm"),
+        title: Text("Confirm Order"),
         leading: BackButton(),
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.black,
         centerTitle: true,
         elevation: 0,
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  "Shipping Address",
+                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(height: 15),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  width: MediaQuery.of(context).size.width,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4, spreadRadius: 2)],
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Dear Pro", style: TextStyle(fontSize: 16)),
+                          TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "change",
+                              style: TextStyle(fontSize: 18, color: Color(0xFFDB3022)),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Text("3 Kabul, Dasht-e-barchi", style: TextStyle(fontSize: 16)),
+                      Text(
+                        "Kabul, 1016, Dasht-e-barchi, Afghanistan",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Payment Method",
+                      style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "change",
+                        style: TextStyle(fontSize: 18, color: Color(0xFFDB3022)),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+                Row(
+                  children: [
+                    Container(
+                      height: 50,
+                      width: 80,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(color: Colors.black12, blurRadius: 4, spreadRadius: 2),
+                        ],
+                      ),
+                      child: Image.asset("assets/images/icon2.png"),
+                    ),
+                    SizedBox(width: 20),
+                    Text("**** **** **** 3452"),
+                  ],
+                ),
+                SizedBox(height: 40),
+
+                Text(
+                  "Delivery Method",
+                  style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(height: 10),
+                Row(
+                  children: [
+                    Container(
+                      height: 60,
+                      width: 100,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(color: Colors.black12, blurRadius: 4, spreadRadius: 2),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Image.asset("assets/images/icon3.png", height: 20),
+                          Text("2-7 Days"),
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 20),
+                    Container(
+                      height: 60,
+                      width: 120,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(color: Colors.black12, blurRadius: 4, spreadRadius: 2),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Home Delivery",
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.indigo,
+                            ),
+                          ),
+                          Text("2-7 Days"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 100),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Sub-Total",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text("\$300.00", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500)),
+                  ],
+                ),
+                SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Free Shipping",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text("\$15.00", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500)),
+                  ],
+                ),
+                Divider(height: 30, color: Colors.black),
+                SizedBox(height: 15),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Total Payment",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text(
+                      "\$315.00",
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFFDB3022),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 40),
+                InkWell(
+                  onTap: () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(builder: (context) => ShippingAddressScreen()),
+                    // );
+                  },
+                  child: ContainerButtonModel(
+                    itext: "Confirm Payment",
+                    containerWidth: MediaQuery.of(context).size.width,
+                    bgColor: Color(0xFFDB3022),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
