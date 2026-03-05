@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'E-commerce App',
       theme: ThemeData(primaryColor: Color(0xFFDB3022)),
-      home: const NavigationScreen(),
+      home: const SplashScreen(),
     );
   }
 }

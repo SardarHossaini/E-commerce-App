@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/cart_screen.dart';
 import 'package:e_commerce_app/widgets/container_button_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -114,7 +115,9 @@ class ProductsDetailsPopups extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_) => CartScreen()));
+                    },
                     child: ContainerButtonModel(
                       itext: "Checkout",
                       containerWidth: MediaQuery.of(context).size.width,

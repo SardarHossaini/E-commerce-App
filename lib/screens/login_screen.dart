@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/screens/forgot_password_screen.dart';
 import 'package:e_commerce_app/screens/home_screen.dart';
+import 'package:e_commerce_app/screens/navigation_screen.dart';
 import 'package:e_commerce_app/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -55,7 +56,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => NavigationScreen()));
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size.fromHeight(55),
