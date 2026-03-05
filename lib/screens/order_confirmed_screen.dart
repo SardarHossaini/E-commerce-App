@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/order_success_screen.dart';
 import 'package:e_commerce_app/screens/payment_method_screen.dart';
 import 'package:e_commerce_app/screens/shipping_address_screen.dart';
 import 'package:e_commerce_app/widgets/container_button_model.dart';
@@ -221,10 +222,10 @@ class OrderConfirmedScreen extends StatelessWidget {
                 SizedBox(height: 40),
                 InkWell(
                   onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(builder: (context) => ShippingAddressScreen()),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => OrderSuccessScreen()),
+                    );
                   },
                   child: ContainerButtonModel(
                     itext: "Confirm Payment",
