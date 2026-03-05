@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/screens/payment_method_screen.dart';
+import 'package:e_commerce_app/screens/shipping_address_screen.dart';
 import 'package:e_commerce_app/widgets/container_button_model.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +47,12 @@ class OrderConfirmedScreen extends StatelessWidget {
                         children: [
                           Text("Dear Pro", style: TextStyle(fontSize: 16)),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => ShippingAddressScreen()),
+                              );
+                            },
                             child: Text(
                               "change",
                               style: TextStyle(fontSize: 18, color: Color(0xFFDB3022)),
@@ -70,7 +77,12 @@ class OrderConfirmedScreen extends StatelessWidget {
                       style: TextStyle(fontSize: 19, fontWeight: FontWeight.w600),
                     ),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => PaymentMethodScreen()),
+                        );
+                      },
                       child: Text(
                         "change",
                         style: TextStyle(fontSize: 18, color: Color(0xFFDB3022)),
