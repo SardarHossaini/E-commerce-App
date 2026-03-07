@@ -1,10 +1,20 @@
 import 'package:e_commerce_app/screens/payment_method_screen.dart';
+import 'package:e_commerce_app/widgets/app_drawer.dart';
 import 'package:e_commerce_app/widgets/container_button_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CartScreen extends StatelessWidget {
-  CartScreen({super.key});
+  CartScreen({
+    super.key,
+    this.currentIndex = 1,
+    this.onDrawerItemSelected = _defaultOnDrawerItemSelected,
+  });
+
+  static void _defaultOnDrawerItemSelected(int _) {}
+
+  final int currentIndex;
+  final ValueChanged<int> onDrawerItemSelected;
 
   List<String> imagesList = [
     "assets/images/image1.jpg",
@@ -19,9 +29,17 @@ class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: AppDrawer(currentIndex: currentIndex, onItemSelected: onDrawerItemSelected),
       appBar: AppBar(
-        title: Text("Cart"),
-        leading: BackButton(),
+        title: const Text("Cart"),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu_rounded),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            );
+          },
+        ),
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.black,
         centerTitle: true,

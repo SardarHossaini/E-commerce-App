@@ -15,11 +15,11 @@ class NavigationScreen extends StatefulWidget {
 class _NavigationScreenState extends State<NavigationScreen> {
   int _pageIndex = 0;
 
-  final List<Widget> _pages = [
-    HomeScreen(),
-    CartScreen(),
-    const FavoritesScreen(),
-    const ProfileScreen(),
+  List<Widget> get _pages => [
+    HomeScreen(currentIndex: _pageIndex, onDrawerItemSelected: _onDrawerItemSelected),
+    CartScreen(currentIndex: _pageIndex, onDrawerItemSelected: _onDrawerItemSelected),
+    FavoritesScreen(currentIndex: _pageIndex, onDrawerItemSelected: _onDrawerItemSelected),
+    ProfileScreen(currentIndex: _pageIndex, onDrawerItemSelected: _onDrawerItemSelected),
   ];
 
   final List<_NavItem> _navItems = const [
@@ -28,6 +28,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
     _NavItem(icon: CupertinoIcons.heart_fill, label: 'Favorites'),
     _NavItem(icon: CupertinoIcons.person_fill, label: 'Profile'),
   ];
+
+  void _onDrawerItemSelected(int index) {
+    setState(() {
+      _pageIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,11 +69,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                       item: _navItems[i],
                       isSelected: _pageIndex == i,
                       primaryColor: primaryColor,
-                      onTap: () {
-                        setState(() {
-                          _pageIndex = i;
-                        });
-                      },
+                      onTap: () => _onDrawerItemSelected(i),
                     ),
                   ),
                 ],
