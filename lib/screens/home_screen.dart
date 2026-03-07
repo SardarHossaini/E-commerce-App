@@ -146,9 +146,11 @@ class HomeScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(14),
             border: Border.all(color: Colors.black12),
           ),
-          child: IconButton(
-            icon: const Icon(Icons.menu_rounded, size: 22),
-            onPressed: () => Scaffold.of(context).openDrawer(),
+          child: Builder(
+            builder: (context) => IconButton(
+              icon: const Icon(Icons.menu_rounded, size: 22),
+              onPressed: () => Scaffold.of(context).openDrawer(),
+            ),
           ),
         ),
       ],
