@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/screens/navigation_screen.dart';
+import 'package:e_commerce_app/screens/order_tracking_screen.dart';
 import 'package:e_commerce_app/widgets/container_button_model.dart';
 import 'package:flutter/material.dart';
 
@@ -110,9 +111,9 @@ class OrderSuccessScreen extends StatelessWidget {
                   const Spacer(),
                   OutlinedButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const NavigationScreen()),
+                        MaterialPageRoute(builder: (context) => const OrderTrackingScreen()),
                       );
                     },
                     style: OutlinedButton.styleFrom(
